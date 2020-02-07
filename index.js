@@ -1,14 +1,22 @@
+// Allows to specify custom console log messages with 
+// $env:DEBUG="app:startup" (use comma for multiple or app:*)
+const debug = require("debug")("app:startup");
+// Uses the config npm package that allows to set config files
+// for different environments (dev/testing/staging/prod)
 const config = require("config");
+// Morgan logs requests
 const morgan = require("morgan");
+// Helmet set HTTP headers that increase security
+const helmet = require("helmet");
+// Custom middlewares
+const logger = require("./middleware/logger");
+const authenticate = require("./middleware/authenticate");
+// Routes
+const genres = require("./routes/genres");
+const home = require("./routes/home");
+// Init express
 const express = require("express");
 const app = express();
-const Joi = require("joi");
-const helmet = require("helmet");
-
-const logger = require("./logger");
-const authenticate = require("./authenticate");
-
-// config
 
 console.log(process.env.NODE_ENV);
 console.log(process.env.vidly_password);
@@ -18,91 +26,37 @@ console.log("Application Name: " + config.get("name"));
 console.log("Mail server: " + config.get("mail.host"));
 console.log("Application password: " + config.get("mail.password"));
 
+// app.get("something") is equivalent to process.env.something
+// Show morgan requests logging only in dev environment
 if (app.get("env") === "development") {
   app.use(morgan("tiny"));
-  console.log("Morgan enabled");
+  debug("Morgan enabled...");
 }
 
+// Set pug as view engine (to render pages)
+app.set("view engine", "pug");
+// Contains the pug files that can be used to render html
+app.set("views", "./views");
+
+// Allows to parse incoming data (JSON)
 app.use(express.json());
+// Allows to parse incoming data (form)
 app.use(express.urlencoded({ extended: true }));
+// Contains static files
 app.use(express.static("static"));
+// Use helmet secure HTTP headers
 app.use(helmet());
 
+// Set routes
+app.use("/api/genres", genres);
+app.use("/", home);
+
+// Use custom middleware
 app.use(logger);
 app.use(authenticate);
 
-const genres = [
-  {
-    id: 0,
-    genre: "horror"
-  },
-  {
-    id: 1,
-    genre: "action"
-  },
-  {
-    id: 2,
-    genre: "sci-fi"
-  },
-  {
-    id: 3,
-    genre: "drama"
-  },
-]
-
-function validateGenre(genre) {
-  const schema = {
-    genre: Joi.string().min(3).required(),
-  }
-  return Joi.validate(genre, schema);
-}
-
-app.get("/api/genres", (req, res) => {
-  res.send(genres);
-});
-
-app.put("/api/genres/:id", (req, res) => {
-
-  const genre = genres.find(c => c.id === parseInt(req.params.id));
-  if (!genre) res.status(400).send("The genre with the given ID was not found.");
-
-  const { error } = validateGenre(req.body);
-  if (error) {
-    res.status(400).send(error.details[0].message);
-    return;
-  }
-
-  genre.genre = req.body.genre;
-  res.send(genre);
-});
-
-app.post("/api/genres", (req, res) => {
-
-  const { error } = validateGenre(req.body);
-  if (error) {
-    res.status(400).send(error.details[0].message);
-    return;
-  }
-
-  const genre = {
-    id: genres.length + 1,
-    genre: req.body.genre,
-  }
-
-  genres.push(genre);
-  res.send(genre);
-});
-
-app.delete("/api/genres/:id", (req, res) => {
-  const genre = genres.find(c => c.id === parseInt(req.params.id));
-  if (!genre) res.status(400).send("The genre with the given ID was not found.");
-
-  const index = genres.indexOf(genre);
-  genres.splice(index, 1);
-
-  res.send(genre);
-})
-
+// If no env port is specified, use 3000
 const port = process.env.port || 3000;
 
+// Listen for incoming requests
 app.listen(port, () => console.log(`Listening on port ${port}...`));
