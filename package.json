@@ -1,7 +1,7 @@
 {
-  "name": "mosh-node",
+  "name": "rest-api-mongodb",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node REST API + MongoDB fun",
   "main": "index.js",
   "dependencies": {
     "config": "^3.2.5",
