@@ -1,4 +1,5 @@
-// Allows to specify custom console log messages with 
+const mongoose = require("mongoose");
+// Allows to specify custom console log messages with
 // $env:DEBUG="app:startup" (use comma for multiple or app:*)
 const debug = require("debug")("app:startup");
 // Uses the config npm package that allows to set config files
@@ -13,10 +14,19 @@ const logger = require("./middleware/logger");
 const authenticate = require("./middleware/authenticate");
 // Routes
 const genres = require("./routes/genres");
+const customers = require("./routes/customers");
 const home = require("./routes/home");
 // Init express
 const express = require("express");
 const app = express();
+
+// Connect to the mongo DB
+mongoose.connect("mongodb://localhost/rest-api-mongodb", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+  .then(()=>console.log("Connected to mongoDB."))
+  .catch(err => console.log("Could not connect to mongoDB."))
 
 // console.log(process.env.NODE_ENV);
 // console.log(process.env.vidly_password);
@@ -49,6 +59,7 @@ app.use(helmet());
 
 // Set routes
 app.use("/api/genres", genres);
+app.use("/api/customers", customers);
 app.use("/", home);
 
 // Use custom middleware

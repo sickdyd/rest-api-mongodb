@@ -1,90 +1,53 @@
-const mongoose = require("mongoose");
+const {Genre, validate} = require("../models/customer");
 const express = require("express");
 const router = express.Router();
-const Joi = require("joi");
-
-// Connect to the mongo DB
-mongoose.connect("mongodb://localhost/rest-api-mongodb", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}, () => {
-  console.log("Connected to mongoDB.");
-});
-
-// Define a schema for the genre document
-const genreSchema = new mongoose.Schema({
-  genre: String,
-});
-
-// Define a model (class) for the genre document
-const Genre = mongoose.model("Genre", genreSchema); 
-
-// Use Joi to validate data
-function validateGenre(genre) {
-  const schema = {
-    genre: Joi.string().min(3).required(),
-  }
-  return Joi.validate(genre, schema);
-}
 
 // Get the list of genres
-router.get("/", (req, res) => {
-  Genre.find({})
-    .then(genres => res.status(200).send(genres))
-    .catch(err => res.statys(400).send(err))
+router.get("/", async (req, res) => {
+  const genres = await Genre.find().sort("genre");
+  res.status(200).send(genres);
 });
 
-// Edit one genre
-router.put("/:id", (req, res) => {
-  // Retrieve the genre from the table
-  Genre.findById(req.params.id)
-    .then(genre => {
-      console.log(genre);
-      // If the function returns null the provided ID was not found
-      if (!genre) res.status(400).send("The genre with the given ID was not found.");
-      // Validate the content of the request
-      const { error } = validateGenre(req.body);
-      // If there is an error send it and return
-      if (error) {
-        res.status(400).send(error.details[0].message);
-        return;
-      }
-      // If the ID was foud and no errors were given save the document
-      genre.set({ genre: req.body.genre });
-      genre.save();
-      // Send the new saved document to the client
-      res.send(genre);
-    })
-    // Handle error for the findGenreById function
-    .catch(err => res.status(400).send(err.message));
+// Get the one genre
+router.get("/:id", async (req, res) => {
+  const genre = await Genre.findById(req.params.id);
+  if (!genre) return res.status(400).send("The genre with the given ID was not found.");
+  res.status(200).send(genre);
 });
 
 // Add a genre
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   // Validate the content of the request
-  const { error } = validateGenre(req.body);
-  if (error) {
-    res.status(400).send(error.details[0].message);
-    return;
-  }
-  // Create the new object containing the values of the new genre
-  const genre = {
-    // id: genres.length + 1,
-    genre: req.body.genre,
-  }
+  const { error } = validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
   // Create the new genre, save it and send the result
-  const newGenre = new Genre(genre);
-  newGenre.save()
-    .then(genre => res.status(200).send(genre))
-    .catch(err => res.status(400).send(err.message))
+  let genre = new Genre({ genre: req.body.genre });
+  genre = await genre.save();
+  res.status(200).send(genre);
+});
+
+// Edit one genre
+router.put("/:id", async (req, res) => {
+  // Validate req.body
+  const { error } = validate(req.body);
+  // If there is an error send it and return
+  if (error) return res.status(400).send(error.details[0].message);
+  // Set new: true to get the updated document
+  const genre = await Genre.findByIdAndUpdate(req.params.id, { genre: req.body.genre }, {
+    new: true,
+    useFindAndModify: false
+  });
+  // If the function returns null the provided ID was not found
+  if (!genre) return res.status(400).send("The genre with the given ID was not found.");
+  res.status(200).send(genre);
 });
 
 // Delete genre
-router.delete("/:id", (req, res) => {
+router.delete("/:id", async (req, res) => {
   // Find a document by id, delete it and sent the result
-  Genre.findByIdAndDelete(req.params.id)
-    .then(result => res.status(200).send(result))
-    .catch(err => res.status(400).send("Could not find the genre with the ID provided."));
-})
+  const genre = await Genre.findByIdAndDelete(req.params.id);
+  if (!genre) return res.status(400).send("The genre with the given ID was not found.");
+  res.status(200).send(genre)
+});
 
 module.exports = router;
