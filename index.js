@@ -15,6 +15,7 @@ const authenticate = require("./middleware/authenticate");
 // Routes
 const genres = require("./routes/genres");
 const customers = require("./routes/customers");
+const movies = require("./routes/movies");
 const home = require("./routes/home");
 // Init express
 const express = require("express");
@@ -60,6 +61,7 @@ app.use(helmet());
 // Set routes
 app.use("/api/genres", genres);
 app.use("/api/customers", customers);
+app.use("/api/movies", movies);
 app.use("/", home);
 
 // Use custom middleware

@@ -1,10 +1,10 @@
-const {Genre, validate} = require("../models/customer");
+const {Genre, validate} = require("../models/genre");
 const express = require("express");
 const router = express.Router();
 
 // Get the list of genres
 router.get("/", async (req, res) => {
-  const genres = await Genre.find().sort("genre");
+  const genres = await Genre.find().sort("name");
   res.status(200).send(genres);
 });
 
@@ -18,10 +18,13 @@ router.get("/:id", async (req, res) => {
 // Add a genre
 router.post("/", async (req, res) => {
   // Validate the content of the request
+  console.log(req.body);
+  
   const { error } = validate(req.body);
+  console.log(error);
   if (error) return res.status(400).send(error.details[0].message);
   // Create the new genre, save it and send the result
-  let genre = new Genre({ genre: req.body.genre });
+  let genre = new Genre({ name: req.body.name });
   genre = await genre.save();
   res.status(200).send(genre);
 });
@@ -33,7 +36,7 @@ router.put("/:id", async (req, res) => {
   // If there is an error send it and return
   if (error) return res.status(400).send(error.details[0].message);
   // Set new: true to get the updated document
-  const genre = await Genre.findByIdAndUpdate(req.params.id, { genre: req.body.genre }, {
+  const genre = await Genre.findByIdAndUpdate(req.params.id, { name: req.body.name }, {
     new: true,
     useFindAndModify: false
   });
