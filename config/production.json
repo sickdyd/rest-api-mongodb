@@ -1,5 +1,5 @@
 {
-  "name": "vidly - production",
+  "name": "rest-api-mongodb - production",
   "mail": {
     "host": "prod-mail-server"
   }

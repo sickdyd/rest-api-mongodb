@@ -1,0 +1,5 @@
+To set environment variables in Windows 10
+  $env:NODE_ENV="development"
+
+Import json to mongodb
+mongoimport --db rest-api-mongodb --collection genres --drop --file genres.json --jsonArray

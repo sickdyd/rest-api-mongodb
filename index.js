@@ -18,13 +18,13 @@ const home = require("./routes/home");
 const express = require("express");
 const app = express();
 
-console.log(process.env.NODE_ENV);
-console.log(process.env.vidly_password);
-console.log(app.get("env"));
+// console.log(process.env.NODE_ENV);
+// console.log(process.env.vidly_password);
+// console.log(app.get("env"));
  
 console.log("Application Name: " + config.get("name"));
-console.log("Mail server: " + config.get("mail.host"));
-console.log("Application password: " + config.get("mail.password"));
+// console.log("Mail server: " + config.get("mail.host"));
+// console.log("Application password: " + config.get("mail.password"));
 
 // app.get("something") is equivalent to process.env.something
 // Show morgan requests logging only in dev environment
