@@ -1,8 +1,14 @@
 REST API + MongoDB CRUD project.
 
-Movie genres.
-
 Endpoints:
+
+  Register user (POST)
+  http://localhost:3000/api/users
+
+  Authenticate user (POST)
+  http://localhost:3000/api/auth
+
+  ------------------------------------------
 
   Get the list of genres available (GET)
   http://localhost:3000/api/genres
@@ -16,6 +22,8 @@ Endpoints:
   Delete a genre (DEL)
   http://localhost:3000/api/genres/:id
 
+  ------------------------------------------
+
   Get the list of customers available (GET)
   http://localhost:3000/api/customers
 
@@ -26,7 +34,9 @@ Endpoints:
   http://localhost:3000/api/customers
 
   Delete a customer (DEL)
-  http://localhost:3000/api/customers/{id}
+  http://localhost:3000/api/customers/:id
+
+  ------------------------------------------
 
   Get the list of movies available (GET)
   http://localhost:3000/api/movies
@@ -39,3 +49,11 @@ Endpoints:
 
   Delete a movie (DEL)
   http://localhost:3000/api/movies/:id
+
+  ------------------------------------------
+
+  Get current rentals (GET)
+  http://localhost:3000/api/rentals
+
+  Create rental (POST)
+  http://localhost:3000/api/rentals

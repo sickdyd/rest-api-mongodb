@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
     }
   })
 
-  // Fawn allows to create a transaction
+  // Fawn allows to create a 2 phase transaction
   try {
     new Fawn.Task()
       .save("rentals", rental)
