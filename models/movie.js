@@ -8,7 +8,7 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    minlehgth: 5,
+    minlehgth: 1,
     maxlength: 255
   },
   genre: {
@@ -35,7 +35,7 @@ const Movie = mongoose.model("Movie", movieSchema);
 // Use Joi to validate data
 function validateMovie(movie) {
   const schema = {
-    title: Joi.string().min(5).max(255).required(),
+    title: Joi.string().min(1).max(255).required(),
     genre: Joi.string().required(),
     numberInStock: Joi.number().required(),
     dailyRentalRate: Joi.number().required()
@@ -45,3 +45,4 @@ function validateMovie(movie) {
 
 exports.Movie = Movie;
 exports.validate = validateMovie;
+exports.movieSchema = movieSchema;

@@ -35,3 +35,4 @@ function validateCustomer(customer) {
 // module.exports.Customer = Customer;
 exports.Customer = Customer;
 exports.validate = validateCustomer;
+exports.userSchema = userSchema;

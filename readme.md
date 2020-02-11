@@ -25,7 +25,7 @@ Endpoints:
   Add a customer (POST)
   http://localhost:3000/api/customers
 
-  Delete a customers (DEL)
+  Delete a customer (DEL)
   http://localhost:3000/api/customers/{id}
 
   Get the list of movies available (GET)
@@ -37,5 +37,5 @@ Endpoints:
   Add a movie (POST)
   http://localhost:3000/api/movies
 
-  Delete a customers (DEL)
+  Delete a movie (DEL)
   http://localhost:3000/api/movies/:id
