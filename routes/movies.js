@@ -2,6 +2,7 @@ const {Movie, validate} = require("../models/movie");
 const {Genre} = require("../models/genre");
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
 
 router.get("/", async (req, res) => {
   const movies = await Movie
@@ -13,6 +14,8 @@ router.get("/", async (req, res) => {
 
 // Get the one movie
 router.get("/:id", async (req, res) => {
+  const validId = mongoose.Types.ObjectId.isValid(req.params.id);
+  if (!validId) return res.status(400).send("The ID is not valid.");
   const movie = await Movie
     .findById(req.params.id)
   if (!movie) return res.status(400).send("The movie with the given ID was not found.");
@@ -25,10 +28,10 @@ router.post("/", async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
   // If the genre does not exists send error
-  const genre = await Genre.findById(req.body.genre);
+  const genre = await Genre.findById(req.body.genreId);
   if (!genre) return res.status(400).send("Invalid genre.");
   // Create the new movie, save it and send the result
-  let movie = new Movie({
+  const movie = new Movie({
     title: req.body.title,
     genre: {
       _id: genre._id,
@@ -37,18 +40,20 @@ router.post("/", async (req, res) => {
     numberInStock: req.body.numberInStock,
     dailyRentalRate: req.body.dailyRentalRate
   });
-  movie = await movie.save();
+  await movie.save();
   res.status(200).send(movie);
 });
 
 // Edit one movie
 router.put("/:id", async (req, res) => {
+  const validId = mongoose.Types.ObjectId.isValid(req.params.id);
+  if (!validId) return res.status(400).send("The ID is not valid.");
   // Validate req.body
   const { error } = validate(req.body);
   // If there is an error send it and return
   if (error) return res.status(400).send(error.details[0].message);
   // If the genre does not exists send error
-  const genre = await Genre.findById(req.body.genre);
+  const genre = await Genre.findById(req.body.genreId);
   if (!genre) return res.status(400).send("Invalid genre.");
   // Set new: true to get the updated document
   const movie = await Movie
@@ -74,6 +79,8 @@ router.put("/:id", async (req, res) => {
 
 // Delete movie
 router.delete("/:id", async (req, res) => {
+  const validId = mongoose.Types.ObjectId.isValid(req.params.id);
+  if (!validId) return res.status(400).send("The ID is not valid.");
   // Find a document by id, delete it and sent the result
   const movie = await Movie.findByIdAndDelete(req.params.id);
   if (!movie) return res.status(400).send("The movie with the given ID was not found.");

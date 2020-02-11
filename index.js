@@ -1,3 +1,5 @@
+const Joi = require("joi");
+Joi.objectId = require("joi-objectid")(Joi);
 const mongoose = require("mongoose");
 // Allows to specify custom console log messages with
 // $env:DEBUG="app:startup" (use comma for multiple or app:*)
@@ -17,15 +19,17 @@ const genres = require("./routes/genres");
 const customers = require("./routes/customers");
 const movies = require("./routes/movies");
 const rentals = require("./routes/rentals");
+const users = require("./routes/users");
 const home = require("./routes/home");
 // Init express
 const express = require("express");
 const app = express();
 
 // Connect to the mongo DB
-mongoose.connect("mongodb://localhost/rest-api-mongodb", {
+mongoose.connect("mongodb://localhost:27017/rest-api-mongodb", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true,
 })
   .then(()=>console.log("Connected to mongoDB."))
   .catch(err => console.log("Could not connect to mongoDB."))
@@ -64,6 +68,7 @@ app.use("/api/genres", genres);
 app.use("/api/customers", customers);
 app.use("/api/movies", movies);
 app.use("/api/rentals", rentals);
+app.use("/api/users", users);
 app.use("/", home);
 
 // Use custom middleware

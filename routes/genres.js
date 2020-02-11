@@ -1,6 +1,7 @@
 const {Genre, validate} = require("../models/genre");
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
 
 // Get the list of genres
 router.get("/", async (req, res) => {
@@ -10,6 +11,8 @@ router.get("/", async (req, res) => {
 
 // Get the one genre
 router.get("/:id", async (req, res) => {
+  const validId = mongoose.Types.ObjectId.isValid(req.params.id);
+  if (!validId) return res.status(400).send("The ID is not valid.");
   const genre = await Genre.findById(req.params.id);
   if (!genre) return res.status(400).send("The genre with the given ID was not found.");
   res.status(200).send(genre);
@@ -18,19 +21,18 @@ router.get("/:id", async (req, res) => {
 // Add a genre
 router.post("/", async (req, res) => {
   // Validate the content of the request
-  console.log(req.body);
-  
   const { error } = validate(req.body);
-  console.log(error);
   if (error) return res.status(400).send(error.details[0].message);
   // Create the new genre, save it and send the result
-  let genre = new Genre({ name: req.body.name });
-  genre = await genre.save();
+  const genre = new Genre({ name: req.body.name });
+  await genre.save();
   res.status(200).send(genre);
 });
 
 // Edit one genre
 router.put("/:id", async (req, res) => {
+  const validId = mongoose.Types.ObjectId.isValid(req.params.id);
+  if (!validId) return res.status(400).send("The ID is not valid.");
   // Validate req.body
   const { error } = validate(req.body);
   // If there is an error send it and return
@@ -47,6 +49,8 @@ router.put("/:id", async (req, res) => {
 
 // Delete genre
 router.delete("/:id", async (req, res) => {
+  const validId = mongoose.Types.ObjectId.isValid(req.params.id);
+  if (!validId) return res.status(400).send("The ID is not valid.");
   // Find a document by id, delete it and sent the result
   const genre = await Genre.findByIdAndDelete(req.params.id);
   if (!genre) return res.status(400).send("The genre with the given ID was not found.");
