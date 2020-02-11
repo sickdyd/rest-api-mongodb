@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Joi = require("joi");
+const Joi = require("@hapi/joi");
 const passwordComplexity = require("joi-password-complexity");
 
 const complexityOptions = {
@@ -37,13 +37,17 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 function validateUser(user) {
-  const schema = {
+  // change is: wrapped everything in Joi.object
+  const schema = Joi.object({
     name: Joi.string().min(1).max(55).required(),
     email: Joi.string().min(5).max(255).required().email(),
-    password: Joi.string().min(5).max(255).required()
-  }
-  return Joi.validate(user, schema);
+    password: passwordComplexity(complexityOptions) // This is not working
+  });
+  // note that we call schema.validate instead of Joi.validate
+  // (which doesn't seem to exist anymore)
+  return schema.validate(user);
 }
+
 
 exports.User = User;
 exports.validate = validateUser;

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Joi = require("joi");
+const Joi = require("@hapi/joi");
 const {genreSchema} = require("./genre");
 
 // Define a schema for the movie document
@@ -34,13 +34,13 @@ const Movie = mongoose.model("Movie", movieSchema);
 
 // Use Joi to validate data
 function validateMovie(movie) {
-  const schema = {
+  const schema = Joi.object({
     title: Joi.string().min(1).max(255).required(),
     genreId: Joi.objectId().required(),
     numberInStock: Joi.number().required(),
     dailyRentalRate: Joi.number().required()
-  }
-  return Joi.validate(movie, schema);
+  })
+  return schema.validate(movie);
 }
 
 exports.Movie = Movie;

@@ -9,8 +9,8 @@ router.get("/", async (req, res) => {
 })
 
 router.get("/:id", async (req, res) => {
-  //const validId = mongoose.Types.ObjectId.isValid(req.params.id);
-  //if (!validId) return res.status(400).send("The ID is not valid.");
+  const validId = mongoose.Types.ObjectId.isValid(req.params.id);
+  if (!validId) return res.status(400).send("The ID is not valid.");
   const customer = await Customer.findById(req.params.id);
   if (!customer) return res.status(400).send("Customer not found.");
   res.status(200).send(customer);
