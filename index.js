@@ -77,6 +77,11 @@ app.use("/", home);
 app.use(logger);
 app.use(authenticate);
 
+// Check if the private key for tokens is set
+if (!config.get("jwtPrivateKey")) {
+  console.log("FATAL ERROR: jwtPrivateKey is not defined in the ENV variables.")
+  process.exit(1);
+}
 // If no env port is specified, use 3000
 const port = process.env.port || 3000;
 

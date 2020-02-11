@@ -1,3 +1,4 @@
 {
-  "name": "rest-api-mongodb"
+  "name": "rest-api-mongodb",
+  "jwtPrivateKey": ""
 }
