@@ -3,6 +3,7 @@ const {Genre} = require("../models/genre");
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
+const auth = require("../middleware/auth");
 
 router.get("/", async (req, res) => {
   const movies = await Movie
@@ -23,7 +24,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Add a movie
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   // Validate the content of the request
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -45,7 +46,7 @@ router.post("/", async (req, res) => {
 });
 
 // Edit one movie
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   const validId = mongoose.Types.ObjectId.isValid(req.params.id);
   if (!validId) return res.status(400).send("The ID is not valid.");
   // Validate req.body
@@ -78,7 +79,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete movie
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   const validId = mongoose.Types.ObjectId.isValid(req.params.id);
   if (!validId) return res.status(400).send("The ID is not valid.");
   // Find a document by id, delete it and sent the result

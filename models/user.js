@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Joi = require("@hapi/joi");
 const passwordComplexity = require("joi-password-complexity");
+const jwt = require("jsonwebtoken");
+const config = require("config");
 
 const complexityOptions = {
   min: 5,
@@ -31,8 +33,19 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     maxlength: 1024,
     required: true
-  }
-})
+  },
+  isAdmin: Boolean,
+  // Sub roles and privileges
+  // roles: [],
+  // What the user is allowed to perform
+  // ex. create genres / delete genres
+  // operations: []
+});
+
+userSchema.methods.generateAuthToken = function() {
+  const token = jwt.sign({ _id: this._id, isAdmin: this.isAdmin }, config.get("jwtPrivateKey"));
+  return token;
+}
 
 const User = mongoose.model("User", userSchema);
 

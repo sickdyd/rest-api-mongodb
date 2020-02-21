@@ -3,8 +3,6 @@ const router = express.Router();
 const _ = require("lodash");
 const bcrypt = require("bcrypt");
 const Joi = require("@hapi/joi");
-const jwt = require("jsonwebtoken");
-const config = require("config");
 const {User} = require("../models/user");
 
 router.post("/", async (req, res) => {
@@ -19,7 +17,7 @@ router.post("/", async (req, res) => {
 
   // Generate a json web token by passing a value and a private key
   // The private key should be stored in an enviroment variable
-  const token = jwt.sign({ _id: user._id }, config.get("jwtPrivateKey"));
+  const token = user.generateAuthToken();
   res.send(token);
 });
 

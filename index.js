@@ -13,7 +13,6 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 // Custom middlewares
 const logger = require("./middleware/logger");
-const authenticate = require("./middleware/authenticate");
 // Routes
 const genres = require("./routes/genres");
 const customers = require("./routes/customers");
@@ -75,7 +74,6 @@ app.use("/", home);
 
 // Use custom middleware
 app.use(logger);
-app.use(authenticate);
 
 // Check if the private key for tokens is set
 if (!config.get("jwtPrivateKey")) {
