@@ -1,0 +1,16 @@
+To set environment variables in Windows 10
+  $env:NODE_ENV="development"
+
+  $env:my_jwtPrivateKey="development"
+
+Import json to mongodb
+mongoimport --db rest-api-mongodb --collection genres --drop --file genres.json --jsonArray
+
+// console.log(process.env.NODE_ENV);
+// console.log(process.env.vidly_password);
+// console.log(app.get("env"));
+
+// console.log("Mail server: " + config.get("mail.host"));
+// console.log("Application password: " + config.get("mail.password"));
+
+// console.log("Application Name: " + config.get("name"));
