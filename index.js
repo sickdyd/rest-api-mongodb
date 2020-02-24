@@ -20,4 +20,5 @@ app.use(express.static("static"));
 app.use(helmet());
 
 const port = process.env.port || 3000;
+logger.info(`Server started in ${app.get("env")}.`);
 app.listen(port, () => logger.info(`Listening on port ${port}...`));
