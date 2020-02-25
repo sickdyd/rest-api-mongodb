@@ -4,20 +4,20 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
+const validateObjectId = require("../middleware/validateObjectId");
 
 // Get the list of genres
 router.get("/", async (req, res) => {
-  throw new Error("genres");
   const genres = await Genre.find().sort("name");
   res.status(200).send(genres);
 });
 
 // Get the one genre
-router.get("/:id", async (req, res) => {
-  const validId = mongoose.Types.ObjectId.isValid(req.params.id);
-  if (!validId) return res.status(400).send("The ID is not valid.");
+router.get("/:id", validateObjectId, async (req, res) => {
+  // const validId = mongoose.Types.ObjectId.isValid(req.params.id);
+  // if (!validId) return res.status(400).send("The ID is not valid.");
   const genre = await Genre.findById(req.params.id);
-  if (!genre) return res.status(400).send("The genre with the given ID was not found.");
+  if (!genre) return res.status(404).send("The genre with the given ID was not found.");
   res.status(200).send(genre);
 });
 

@@ -23,9 +23,12 @@
     "winston-daily-rotate-file": "^4.4.2",
     "winston-mongodb": "^5.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll --verbose"
   },
   "keywords": [],
   "author": "",

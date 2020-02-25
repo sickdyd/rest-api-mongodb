@@ -1,4 +1,5 @@
 {
   "name": "rest-api-mongodb",
-  "jwtPrivateKey": ""
+  "jwtPrivateKey": "",
+  "db": "mongodb://localhost:27017/rest-api-mongodb"
 }

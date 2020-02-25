@@ -54,13 +54,12 @@ function validateUser(user) {
   const schema = Joi.object({
     name: Joi.string().min(1).max(55).required(),
     email: Joi.string().min(5).max(255).required().email(),
-    password: passwordComplexity(complexityOptions) // This is not working
+    password: passwordComplexity(complexityOptions)
   });
   // note that we call schema.validate instead of Joi.validate
   // (which doesn't seem to exist anymore)
   return schema.validate(user);
 }
-
 
 exports.User = User;
 exports.validate = validateUser;
