@@ -23,7 +23,6 @@ router.get("/:id", validateObjectId, async (req, res) => {
 
 // Add a genre
 router.post("/", auth, async (req, res) => {
-
   // Validate the content of the request
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
