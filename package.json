@@ -28,7 +28,7 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "test": "jest --watchAll --verbose"
+    "test": "jest --watchAll --verbose --forceExit --runInBand"
   },
   "keywords": [],
   "author": "",
