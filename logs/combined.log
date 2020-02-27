@@ -919,3 +919,177 @@
 {"message":"Server started in test.","level":"info","timestamp":"2020-02-27 21:18:37"}
 {"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 21:18:37"}
 {"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 21:18:37"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 21:23:24"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 21:23:24"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 21:23:25"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 21:23:26"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 21:23:26"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 21:23:26"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:37:19"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:37:19"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:37:19"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:37:20"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:37:20"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:37:20"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:37:50"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:37:50"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:37:50"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:37:51"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:37:51"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:37:51"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:38:18"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:38:18"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:38:18"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:38:19"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:38:19"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:38:19"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:39:11"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:39:11"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:39:11"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:39:12"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:39:12"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:39:12"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:40:52"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:40:52"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:40:52"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:40:53"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:40:53"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:40:53"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:41:26"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:41:26"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:41:26"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:41:26"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:41:26"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:41:26"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:41:43"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:41:43"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:41:43"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:41:43"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:41:43"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:41:43"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:44:09"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:44:09"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:44:09"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:44:10"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:44:10"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:44:10"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:44:49"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:44:49"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:44:49"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:44:50"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:44:50"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:44:50"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:44:53"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:44:53"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:44:53"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:44:54"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:44:54"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:44:54"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:45:05"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:45:05"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:45:05"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:45:06"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:45:06"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:45:06"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:45:59"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:45:59"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:45:59"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:46:00"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:46:00"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:46:00"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:54:15"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:54:15"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:54:15"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:54:16"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:54:16"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:54:16"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:54:56"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:54:56"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:54:56"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:54:57"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:54:57"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:54:57"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:56:24"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:56:24"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:56:24"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:56:25"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:56:25"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:56:25"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:56:53"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:56:53"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:56:53"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:56:54"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:56:54"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:56:54"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:59:15"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:59:15"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:59:15"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 22:59:16"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 22:59:16"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 22:59:16"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:00:04"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:00:04"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:00:04"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:00:05"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:00:05"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:00:05"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:00:49"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:00:49"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:00:49"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:00:50"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:00:50"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:00:50"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:02:02"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:02:02"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:02:02"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:02:03"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:02:03"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:02:03"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:02:53"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:02:53"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:02:53"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:02:54"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:02:54"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:02:54"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:03:28"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:03:28"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:03:28"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:03:29"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:03:29"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:03:29"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:07:32"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:07:32"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:07:32"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:07:33"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:07:33"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:07:33"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:08:04"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:08:04"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:08:04"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:08:05"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:08:05"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:08:05"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:10:19"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:10:19"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:10:19"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:10:32"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:10:32"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:10:32"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:10:34"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:10:34"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:10:34"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:11:07"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:11:07"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:11:07"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:11:08"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:11:08"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:11:08"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:11:19"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:11:19"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:11:19"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:11:19"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:11:19"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:11:20"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-02-27 23:11:32"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-02-27 23:11:32"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-02-27 23:11:32"}
