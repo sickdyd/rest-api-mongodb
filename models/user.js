@@ -17,7 +17,7 @@ const complexityOptions = {
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    minlenght: 1,
+    minlenght: 2,
     maxlength: 55,
     required: true
   },
@@ -52,7 +52,7 @@ const User = mongoose.model("User", userSchema);
 function validateUser(user) {
   // change is: wrapped everything in Joi.object
   const schema = Joi.object({
-    name: Joi.string().min(1).max(55).required(),
+    name: Joi.string().min(2).max(55).required(),
     email: Joi.string().min(5).max(255).required().email(),
     password: passwordComplexity(complexityOptions)
   });

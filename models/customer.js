@@ -28,7 +28,7 @@ function validateCustomer(customer) {
     isGold: Joi.boolean(),
     name: Joi.string().min(5).max(50).required(),
     phone: Joi.string().min(5).max(50).required(),
-  })
+  });
   return schema.validate(customer);
 }
 
