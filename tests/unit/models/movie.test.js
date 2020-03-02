@@ -1,7 +1,7 @@
 const { validate } = require("../../../models/movie");
 const mongoose = require("mongoose");
 
-describe("user schema validation", () => {
+describe("movie schema validation", () => {
 
   let mockMovie;
 
@@ -10,7 +10,7 @@ describe("user schema validation", () => {
       title: "Alien 3",
       genreId: mongoose.Types.ObjectId().toHexString(),
       numberInStock: 1,
-      dailyRentalrate: 5,
+      dailyRentalRate: 5,
     }
   });
 
@@ -60,6 +60,12 @@ describe("user schema validation", () => {
     mockMovie.dailyRentalRate = undefined;
     const result = validate(mockMovie);
     expect(result.error.details[0].type).toMatch(/any.required/);
+  });
+
+  it("should return a movie if input is valid", () => {
+    const result = validate(mockMovie);
+    expect(result.error).toBe(undefined);
+    expect(result.value).toMatchObject(mockMovie);
   });
 
 });

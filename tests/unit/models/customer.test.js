@@ -1,6 +1,6 @@
 const { validate } = require("../../../models/customer");
 
-describe("user schema validation", () => {
+describe("customer schema validation", () => {
 
   let mockCustomer;
 
@@ -52,6 +52,12 @@ describe("user schema validation", () => {
     mockCustomer.phone = Array(52).join("0");
     const result = validate(mockCustomer);
     expect(result.error.details[0].type).toMatch(/string.max/);
+  });
+
+  it("should return the customer if input is valid", () => {
+    const result = validate(mockCustomer);
+    expect(result.error).toBe(undefined);
+    expect(result.value).toMatchObject(mockCustomer);
   });
 
 });
