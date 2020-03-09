@@ -12,7 +12,7 @@ Fawn.init(mongoose);
 router.get("/", async (req, res) => {
   const rentals = await Rental.find().sort("-dateOut");
   res.status("200").send(rentals);
-})
+});
 
 router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);

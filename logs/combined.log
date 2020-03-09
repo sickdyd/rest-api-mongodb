@@ -1180,3 +1180,25 @@
 {"message":"Server started in test.","level":"info","timestamp":"2020-03-02 21:50:29"}
 {"message":"Listening on port 3000...","level":"info","timestamp":"2020-03-02 21:50:29"}
 {"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-03-02 21:50:29"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-03-02 21:51:01"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-03-02 21:51:01"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-03-02 21:51:01"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-03-02 21:52:30"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-03-02 21:52:30"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-03-02 21:52:30"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-03-02 21:54:44"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-03-02 21:54:44"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-03-02 21:54:44"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-03-02 21:54:46"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-03-02 21:54:46"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-03-02 21:54:46"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-03-02 21:54:46"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-03-02 21:54:46"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-03-02 21:54:47"}
+{"level":"error","message":"Testing error 500.Testing error 500.","stack":"Error: Testing error 500.\n    at Object.it (C:\\Users\\Xenomorph\\Desktop\\web development\\rest-api-mongodb\\tests\\unit\\middleware\\error.test.js:24:17)\n    at Object.asyncJestTest (C:\\Users\\Xenomorph\\Desktop\\web development\\rest-api-mongodb\\node_modules\\jest-jasmine2\\build\\jasmineAsyncInstall.js:100:37)\n    at resolve (C:\\Users\\Xenomorph\\Desktop\\web development\\rest-api-mongodb\\node_modules\\jest-jasmine2\\build\\queueRunner.js:43:12)\n    at new Promise (<anonymous>)\n    at mapper (C:\\Users\\Xenomorph\\Desktop\\web development\\rest-api-mongodb\\node_modules\\jest-jasmine2\\build\\queueRunner.js:26:19)\n    at promise.then (C:\\Users\\Xenomorph\\Desktop\\web development\\rest-api-mongodb\\node_modules\\jest-jasmine2\\build\\queueRunner.js:73:41)","timestamp":"2020-03-02 21:54:48"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-03-02 21:54:48"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-03-02 21:54:48"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-03-02 21:54:48"}
+{"message":"Server started in test.","level":"info","timestamp":"2020-03-04 22:55:31"}
+{"message":"Listening on port 3000...","level":"info","timestamp":"2020-03-04 22:55:31"}
+{"message":"Connected to mongodb://localhost:27017/rest-api-mongodb_tests","level":"info","timestamp":"2020-03-04 22:55:31"}

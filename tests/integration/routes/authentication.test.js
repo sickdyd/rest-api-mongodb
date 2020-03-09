@@ -36,8 +36,8 @@ describe("/api/auth", () => {
     });
     
     const exec = async () => await request(server)
-    .post("/api/auth")
-    .send(mockCredentials);
+      .post("/api/auth")
+      .send(mockCredentials);
 
     it("should return 400 if the email is not valid", async () => {
       mockCredentials.email = "";
