@@ -8,6 +8,7 @@ require("./startup/database")();
 require("./startup/config")();
 require("./startup/validation")();
 require("./startup/console")(app);
+require("./startup/prod")(app);
 
 app.set("view engine", "pug");
 // Contains the pug files that can be used to render html
@@ -16,8 +17,6 @@ app.set("views", "./views");
 app.use(express.urlencoded({ extended: true }));
 // Contains static files
 app.use(express.static("static"));
-// Use helmet secure HTTP headers
-app.use(helmet());
 
 const port = process.env.port || 3000;
 logger.info(`Server started in ${app.get("env")}.`);

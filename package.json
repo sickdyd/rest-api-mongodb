@@ -6,6 +6,7 @@
   "dependencies": {
     "@hapi/joi": "^16.1.8",
     "bcrypt": "^3.0.8",
+    "compression": "^1.7.4",
     "config": "^3.2.5",
     "debug": "^4.1.1",
     "express": "^4.17.1",
@@ -29,7 +30,11 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "test": "jest --watchAll --verbose --forceExit --runInBand"
+    "test": "jest --watchAll --verbose --forceExit --runInBand",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "10.16.0"
   },
   "keywords": [],
   "author": "",
