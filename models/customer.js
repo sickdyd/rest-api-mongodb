@@ -32,7 +32,6 @@ function validateCustomer(customer) {
   return schema.validate(customer);
 }
 
-// module.exports.Customer = Customer;
 exports.Customer = Customer;
-exports.validate = validateCustomer;
+exports.validateCustomer = validateCustomer;
 exports.userSchema = userSchema;

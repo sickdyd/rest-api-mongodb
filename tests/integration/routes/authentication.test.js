@@ -19,9 +19,9 @@ describe("/api/auth", () => {
   });
 
   afterEach(async () => {
-    await server.close();
     // clean up database
     await User.remove({});
+    await server.close();
   });
 
   describe("POST /", () => {
