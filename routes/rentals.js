@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const Fawn = require("fawn");
-const {Rental, validate} = require("../models/rental");
+const {Rental, validateRental} = require("../models/rental");
 const {Movie} = require("../models/movie");
 const {Customer} = require("../models/customer");
 const auth = require("../middleware/auth");
+const validate = require("../middleware/validate");
 
 Fawn.init(mongoose);
 
@@ -14,10 +15,7 @@ router.get("/", async (req, res) => {
   res.status("200").send(rentals);
 });
 
-router.post("/", auth, async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
+router.post("/", [auth, validate(validateRental)], async (req, res) => {
   const customer = await Customer.findById(req.body.customerId);
   if (!customer) return res.status(400).send("The customer selected is not in the database.");
 

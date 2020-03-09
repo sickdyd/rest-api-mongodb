@@ -1,10 +1,11 @@
-const {Genre, validate} = require("../models/genre");
+const {Genre, validateGenre} = require("../models/genre");
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
 const validateObjectId = require("../middleware/validateObjectId");
+const validate = require("../middleware/validate");
 
 // Get the list of genres
 router.get("/", async (req, res) => {
@@ -22,10 +23,7 @@ router.get("/:id", validateObjectId, async (req, res) => {
 });
 
 // Add a genre
-router.post("/", auth, async (req, res) => {
-  // Validate the content of the request
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+router.post("/", [auth, validate(validateGenre)], async (req, res) => {
   // Create the new genre, save it and send the result
   const genre = new Genre({ name: req.body.name });
   await genre.save();
@@ -33,13 +31,9 @@ router.post("/", auth, async (req, res) => {
 });
 
 // Edit one genre
-router.put("/:id", auth, async (req, res) => {
+router.put("/:id", [auth, validate(validateGenre)], async (req, res) => {
   const validId = mongoose.Types.ObjectId.isValid(req.params.id);
   if (!validId) return res.status(400).send("The ID is not valid.");
-  // Validate req.body
-  const { error } = validate(req.body);
-  // If there is an error send it and return
-  if (error) return res.status(400).send(error.details[0].message);
   // Set new: true to get the updated document
   const genre = await Genre.findByIdAndUpdate(req.params.id, { name: req.body.name }, {
     new: true,

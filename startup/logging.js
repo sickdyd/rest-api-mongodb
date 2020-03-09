@@ -46,7 +46,7 @@ logger.add(new transports.MongoDB({
 
 // This is used to make the console logging more readable
 // Enabled only in development
-// if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === undefined) {
+if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === undefined) {
   const consoleFormat = format.printf(function(info) {
     //console.log(info);
     return `${info.timestamp} - ${info.level}: ${JSON.stringify(info.message, null, 4)}`;
@@ -63,6 +63,6 @@ logger.add(new transports.MongoDB({
     colorize: true,
     prettyPrint: true
   }));
-// }
+}
 
 module.exports = logger;

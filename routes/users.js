@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const _ = require("lodash");
 const bcrypt = require("bcrypt");
-const {User, validate} = require("../models/user");
+const {User, validateUser} = require("../models/user");
 const auth = require("../middleware/auth");
+const validate = require("../middleware/validate");
 
 router.get("/me", auth, async (req, res) => {
   // The auth middleware verify the validity of the token
@@ -13,10 +14,7 @@ router.get("/me", auth, async (req, res) => {
   res.send(user);
 })
 
-router.post("/", async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
+router.post("/", validate(validateUser), async (req, res) => {
   let user = await User.exists({ email: req.body.email });
   if (user) return res.status(400).send("The email is already in use.");
 

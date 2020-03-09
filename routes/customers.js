@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const auth = require("../middleware/auth");
+const validate = require("../middleware/validate");
 
 router.get("/", async (req, res) => {
   const customers = await Customer.find().sort("name");
@@ -17,10 +18,7 @@ router.get("/:id", async (req, res) => {
   res.status(200).send(customer);
 });
 
-router.post("/", auth, async (req, res) => {
-  const { error } = validate(req.body);
-  console.log("This is the error", error);
-  if (error) return res.status(400).send(error.details[0].message);
+router.post("/", [auth, validate(validateCustomer)], async (req, res) => {
   const customer = new Customer({
     name: req.body.name,
     phone: req.body.phone,
@@ -30,12 +28,10 @@ router.post("/", auth, async (req, res) => {
   res.status(200).send(customer);
 });
 
-router.put("/:id", auth, async (req, res) => {
+router.put("/:id",  [auth, validate(validateCustomer)], async (req, res) => {
   const validId = mongoose.Types.ObjectId.isValid(req.params.id);
   if (!validId) return res.status(400).send("The ID is not valid.");
-  const { error } = validate(req.body);
-  console.log(req.body, error);
-  if (error) return res.status(400).send(error.details[0].message);
+
   const customer = await Customer.findByIdAndUpdate(
     req.params.id,
     {
